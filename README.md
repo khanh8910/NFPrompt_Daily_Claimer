@@ -6,7 +6,7 @@ pip install web3
 pip install loguru
 ```
 
-Write your addresses in private_keys_NFP.txt
+Write your addresses in private_keys_NFP.txt line by line.
 
 Run:
 ```
