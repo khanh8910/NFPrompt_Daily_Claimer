@@ -2,10 +2,10 @@ from loguru import logger
 from web3 import Web3
 import random
 
-def hit_and_get_tx_data(private_key):
+def claim(private_key):
     web3 = Web3(Web3.HTTPProvider('https://opbnb-mainnet-rpc.bnbchain.org'))
     account = web3.eth.account.from_key(private_key)
-    logger.info(f"{account.address} Daily HIT")
+    logger.info(f"Start claiming {account.address}")
 
     tx = {
         "chainId": 204,
@@ -29,8 +29,8 @@ with open("private_keys_NFP.txt", 'r', encoding='UTF-8') as f:
         if line.rstrip() != '':
             list_pri.append(line.rstrip())
 
-random.shuffle(list_pri)           
+#random.shuffle(list_pri)           
 
 for i in list_pri:
-    result = hit_and_get_tx_data(i)
+    result = claim(i)
     logger.debug(result)
